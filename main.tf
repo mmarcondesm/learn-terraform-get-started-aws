@@ -41,6 +41,17 @@ module "vpc" {
   enable_dns_hostnames    = true
 }
 
+module "ecr" {
+  source           = "./modules/ecr"
+  repository_name  = "meu-app"
+  tags = {
+    Project = "Projeto1"
+    ManagedBy = "Terraform"
+  }
+}
+
+
+
 
 resource "aws_s3_account_public_access_block" "this" {
   count = var.create ? 1 : 0

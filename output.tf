@@ -6,3 +6,13 @@ output "s3_account_public_access_block_id" {
   description = "AWS account ID"
   value = try(aws_s3_account_public_access_block.this[0].id, "")
 }
+
+output "repository_url" {
+  value       = "aws_ecr_repository.this.repository_url"
+}
+
+output "reposotory_arn" {
+  value       = "aws_ecr_repository.this.arn"
+  
+}
+

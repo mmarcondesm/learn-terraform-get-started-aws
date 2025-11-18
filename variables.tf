@@ -44,3 +44,6 @@ variable "restrict_public_buckets" {
   type        = bool
   default     = false
 }
+
+
+
